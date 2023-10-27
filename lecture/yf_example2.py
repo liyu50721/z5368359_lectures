@@ -36,5 +36,5 @@ if __name__ == "__main__":
     import toolkit_config as cfg
 
     tic = 'QAN.AX'
-    pth = os.path.join(cfg.DATADIR, 'qan_stk_prc.csv')
+    pth = os.path.join(cfg.DATADIR, '../qan_stk_prc.csv')
     yf_prc_to_csv(tic, pth, '2020-01-01', '2020-12-31')
