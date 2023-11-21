@@ -79,8 +79,8 @@ df = pd.DataFrame(data=data).set_index('date')
 # ----------------------------------------------------------------------------
 
 ## will be a series with boolean values
-#cond = df.loc[:, 'action'] == 'up' # --> series with dtype: bool
-#print(cond) 
+cond = df.loc[:, 'action'] == 'up' # --> series with dtype: bool
+print(cond)
 #
 ## We can use this series as an indexer:
 ## A series of booleans can be used to select rows that meet the criteria
@@ -108,7 +108,7 @@ df = pd.DataFrame(data=data).set_index('date')
 # ----------------------------------------------------------------------------
 #   Using booleans to select rows and cols
 # ----------------------------------------------------------------------------
-#print(df.loc[:, [True, False]]) 
+print(df.loc[:, [True, False]])
 
 # Output:
 #                                firm
@@ -121,15 +121,15 @@ df = pd.DataFrame(data=data).set_index('date')
 # 2020-11-18 11:07:44  Morgan Stanley
 # 2020-12-09 15:34:34       JP Morgan
 
-#cond = df.loc[:, 'action'] == 'up'
-#print(df.loc[cond, [False, True]])
+cond = df.loc[:, 'action'] == 'up'
+print(df.loc[cond, [False, True]])
 #
 #print(df.isna())
 #
 
 #df.loc[df.isna()]  # --> exception
 
-#print(df[df.isna()]) 
+print(df[df.isna()])
 
 
 # ----------------------------------------------------------------------------

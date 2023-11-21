@@ -65,7 +65,7 @@ df = pd.DataFrame(data=data).set_index('date')
 # ---------------------------------------------------------------------------- 
 #   Creating groupby objects
 # ---------------------------------------------------------------------------- 
-groups  = '?'
+groups  = df.groupby(by='firm')
 
 #print(groups)
 #
@@ -140,7 +140,7 @@ groups  = '?'
 #
 
 # Using the apply method
-res  = '?'
+res  =  groups.apply(len)
 
 #print(res)
 #print(type(res))
@@ -162,7 +162,7 @@ res  = '?'
 
 
 # using the apply method
-res  = '?'
+res  = groups.apply(pd.isna)
 #print(res) 
 
 # Output:
@@ -198,7 +198,7 @@ def get_last(df):
 #    print("")
 #
 
-res  = '?'
+res  = groups.apply(get_last)
 #print(res) 
 
 
@@ -261,7 +261,7 @@ res  = '?'
 # 2020-12-09 15:34:34       JP Morgan   main  2020-12-09
 
 # By default, DataFrame.apply will apply the function to each column of the data frame
-res  = '?'
+res  = df.apply(len)
 #print(res) 
 
 
@@ -272,7 +272,7 @@ res  = '?'
 # dtype: int64
 
 # To apply the function to each row, set axis=1
-res  = '?'
+res  = df.apply(len, axis=1)
 #print(res) 
 
 
@@ -292,12 +292,12 @@ def first_two(ser):
     return ser.iloc[0:2]
 
 # Apply to each columns
-res  = '?'
-#print(res) 
+res = df.apply(first_two, axis=0)
+#print(res)
 
 
 # Apply to each row
-res  = '?'
+res  = df.apply(first_two, axis=1)
 #print(res) 
 
 

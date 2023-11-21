@@ -88,7 +88,7 @@ print([1] + [2, 3])       # --> [1, 2, 3]
 
 
 # Adding an integer to a series of floats
-new_ser  = '?'
+new_ser  = ser + '1'
 #print(new_ser) 
 
 # Output:
@@ -110,9 +110,9 @@ new_ser  = '?'
 #new_ser = ser + '1'  # --> Exception
 
 # We can add a string to a series containing strings
-s0  = '?'
-#s1 = s0 + '1' 
-#print(s1) 
+s0  = pd.Series(['1', '2', '3'])
+s1 = s0 + '1'
+print(s1)
 
 # Output:
 #  0    11
@@ -176,7 +176,7 @@ s0  = '?'
 
 # What happens when there are no common indexes?
 # Create another series
-s2  = '?'
+s2  = pd.Series([1,2], index=['2900-01-01', '2900-01-02'])
 #print(s2) 
 # Output:
 #   2900-01-01    1
@@ -221,7 +221,7 @@ s2  = '?'
 
 # This will be a dataframe with just one column 'bday'
 # (Note the column argument is a list of one element)
-df2  = '?'
+df2  = df.iloc[1:3, [1]]
 #print(df2) 
 
 # Output:
@@ -248,7 +248,7 @@ df2  = '?'
 #   Operations between dataframes and series
 # ----------------------------------------------------------------------------
 # This is a series of 1, indexed by dates
-ones_by_dates  = '?'
+ones_by_dates  = pd.Series(1, index=dates)
 
 # In:
 #print(ones_by_dates) 
@@ -267,7 +267,7 @@ ones_by_dates  = '?'
 #  dtype: int64
 
 # This is a series of 1, indexed by the columns of df
-ones_by_cols  = '?'
+ones_by_cols  = pd.Series(1, index=['bday', 'close'])
 
 # In:
 #print(ones_by_cols) 
